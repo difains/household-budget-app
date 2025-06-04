@@ -1,8 +1,8 @@
 {
   "name": "household-budget-app",
   "version": "1.0.0",
+  "private": false,
   "homepage": "https://difains.github.io/household-budget-app",
-  "private": true,
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

@@ -25,6 +25,36 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  touch-action: manipulation;
+}
+
+/* 터치 최적화 */
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input, textarea {
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+/* iOS Safari 줌 방지 */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+textarea {
+  font-size: 16px; /* iOS에서 16px 미만 시 자동 줌 발생 */
 }
 
 .App {
@@ -61,7 +91,6 @@ body {
   100% { transform: rotate(360deg); }
 }
 
-/* 공통 버튼 스타일 */
 .btn {
   padding: 12px 24px;
   border: none;
@@ -75,6 +104,8 @@ body {
   align-items: center;
   justify-content: center;
   gap: 8px;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .btn-primary {
@@ -113,7 +144,6 @@ body {
   transform: none;
 }
 
-/* 공통 입력 필드 스타일 */
 .form-control {
   width: 100%;
   padding: 14px 16px;
@@ -130,7 +160,6 @@ body {
   box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
 }
 
-/* 공통 카드 스타일 */
 .card {
   background: var(--surface-color);
   border-radius: 12px;
@@ -139,7 +168,13 @@ body {
   margin-bottom: 20px;
 }
 
-/* 반응형 디자인 */
+/* 스크롤 최적화 */
+.calendar-grid,
+.transactions-list {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
 @media (max-width: 768px) {
   body {
     font-size: 14px;
@@ -164,7 +199,6 @@ body {
   }
 }
 
-/* PWA 지원 */
 @media (display-mode: standalone) {
   .App {
     padding-top: env(safe-area-inset-top);
