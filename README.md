@@ -5,7 +5,8 @@
 household-budget-app/
 ├── public/
 │   ├── index.html
-│   └── manifest.json
+│   ├── manifest.json
+│   └── favicon.ico
 ├── src/
 │   ├── components/
 │   │   ├── Login.js
@@ -23,4 +24,5 @@ household-budget-app/
 │   ├── App.css
 │   └── index.js
 ├── package.json
-└── .gitignore
+├── .gitignore
+└── README.md
